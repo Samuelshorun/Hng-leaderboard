@@ -93,7 +93,7 @@
                 </thead>
                 <?php
                 $row = 1;
-                if (($handle = fopen("./file/test.csv", "r")) !== FALSE) {
+                if (($handle = fopen("./file/test.csv", 'r')) !== FALSE) {
                     while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
                         $num = count($data);
                         echo "<p> $num fields in line $row: <br /></p>\n";
