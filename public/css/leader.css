@@ -47,6 +47,9 @@ span {
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
+.pl-5 {
+    margin-left:($spacer):;
+}
 .copy{
     color: white;
 }
@@ -211,6 +214,9 @@ a.article:hover {
     padding: 20px;
     min-height: 100vh;
     transition: all 0.3s;
+}
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color:#add8e6
 }
 
 /* ---------------------------------------------------
