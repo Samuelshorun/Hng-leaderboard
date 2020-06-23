@@ -193,11 +193,11 @@ console.log(pagetbody);
 function drawtbody() {
    document.getElementById("tbody").innerHTML = "";
     for (r = 0; r < pagetbody.length; r++) {
-        let table = `<tr><td valign="middle">${pagetbody[r].name}</td><td>${pagetbody[r].email}</td><td>${pagetbody[r].score}</td><td valign="middle"><img src="img/twitter.svg" width="30%" height="30%">          
+        let table = `<tr class="tRow"><td valign="middle">${pagetbody[r].name}</td><td>${pagetbody[r].email}</td><td>${pagetbody[r].score}</td><td valign="middle"><img src="img/twitter.svg" width="30%" height="30%">          
                             <img src="img/linkedin.svg" width="30%" height="30%"></td>
                       </tr>`
         document.getElementById("tbody").innerHTML += table;
-        
+
     }
 }
 
