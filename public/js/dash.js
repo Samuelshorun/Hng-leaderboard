@@ -9,121 +9,121 @@ const interns =
                 {
                 id: 1,
                 name:'Zucchipakoda',
-                score: 1,
+                score: 149,
                 email: 'zucc@gmail.com'
                 },
                 {
                 id: 2,
                 name:'Zucchipakoda',
-                score: 2,
+                score: 148,
                 email: 'zucc@gmail.com'
                 },
                 {
                 id: 3,
                 name:'Zucchipakoda',
-                score: 3,
+                score: 147,
                 email: 'zucc@gmail.com'
                 },
                 {
                 id: 4,
                 name:'Zucchipakoda',
-                score: 4,
+                score: 146,
                 email: 'zucc@gmail.com'
                 },
                 {
                 id: 5,
                 name:'Zucchipakoda',
-                score: 5,
+                score: 145,
                 email: 'zucc@gmail.com'
                 },
                 {
                 id: 6,
                 name:'Zucchipakoda',
-                score: 6,
+                score: 144,
                 email: 'zucc@gmail.com'
                 },
                 {
                 id: 7,
                 name:'Zucchipakoda',
-                score: 7,
+                score: 143,
                 email: 'zucc@gmail.com'
                 },
                 {
                 id: 8,
                 name:'Zucchipakoda',
-                score: 8,
+                score: 142,
                 email: 'zucc@gmail.com'
                 },
                 {
                 id: 9,
                 name:'Zucchipakoda',
-                score: 9,
+                score: 141,
                 email: 'zucc@gmail.com'
                 },
                 {
                 id: 10,
                 name:'Zucchipakoda',
-                score: 10,
+                score: 140,
                 email: 'zucc@gmail.com'
                 },
                 {
                 id: 11,
                 name:'Zucchipakoda',
-                score: 11,
+                score: 139,
                 email: 'zucc@gmail.com'
                 },
                 {
                 id: 12,
                 name:'Zucchipakoda',
-                score: 12,
+                score: 137,
                 email: 'zucc@gmail.com'
                 },
                 {
                 id: 13,
                 name:'Zucchipakoda',
-                score: 13,
+                score: 136,
                 email: 'zucc@gmail.com'
                 },
                 {
                 id: 14,
                 name:'Zucchipakoda',
-                score: 14,
+                score: 133,
                 email: 'zucc@gmail.com'
                 },
                 {
                 id: 15,
                 name:'Zucchipakoda',
-                score: 15,
+                score: 132,
                 email: 'zucc@gmail.com'
                 },
                 {
                 id: 16,
                 name:'Zucchipakoda',
-                score: 16,
+                score: 131,
                 email: 'zucc@gmail.com'
                 },
                 {
                 id: 17,
                 name:'Zucchipakoda',
-                score: 17,
+                score: 130,
                 email: 'zucc@gmail.com'
                 },
                 {
                 id: 18,
                 name:'Zucchipakoda',
-                score: 18,
+                score: 128,
                 email: 'zucc@gmail.com'
                 },
                 {
                 id: 19,
                 name:'Zucchipakoda',
-                score: 19,
+                score: 127,
                 email: 'zucc@gmail.com'
                 },
                 {
                 id: 20,
                 name:'Zucchipakoda',
-                score: 20,
+                score:126,
                 email: 'zucc@gmail.com'
                 }
     ]; 
@@ -164,12 +164,20 @@ function nextPage() {
 
 function previousPage() {
     currentPage -= 1;
+    
+    if (currentPage = 1) {
     loadtbody();
+        best();
+    } else {
+       loadtbody(); 
+    }
+    
 }
 
 function firstPage() {
     currentPage = 1;
     loadtbody();
+    best();
 }
 
 function lastPage() {
@@ -193,12 +201,22 @@ console.log(pagetbody);
 function drawtbody() {
    document.getElementById("tbody").innerHTML = "";
     for (r = 0; r < pagetbody.length; r++) {
-        let table = `<tr class="tRow"><td valign="middle">${pagetbody[r].name}</td><td>${pagetbody[r].email}</td><td>${pagetbody[r].score}</td><td valign="middle"><img src="img/twitter.svg" width="30%" height="30%">          
+        let table = `<tr class="tRow" id="tr"><td valign="middle">${pagetbody[r].name}</td><td>${pagetbody[r].email}</td><td>${pagetbody[r].score}</td><td valign="middle"><img src="img/twitter.svg" width="30%" height="30%">          
                             <img src="img/linkedin.svg" width="30%" height="30%"></td>
                       </tr>`
         document.getElementById("tbody").innerHTML += table;
 
     }
+}
+function best() {
+    const trow = document.querySelectorAll("#tr");
+    
+    trow[0].classList.add("table-warning");
+    
+    trow[1].classList.add("table-success");
+    
+    trow[2].classList.add("table-info");
+    
 }
 
 function check() {
@@ -211,6 +229,7 @@ function check() {
 function load() {
     maketbody();
     loadtbody();
+    best();
 }
-    
+  
 window.onload = load;
